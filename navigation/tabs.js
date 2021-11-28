@@ -59,7 +59,7 @@ const Tabs = () => {
                 style={{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? COLORS.primary : COLORS.secondary,
+                  tintColor: focused ? COLORS.primary : COLORS.black,
                 }}
               />
               <Text
@@ -86,7 +86,7 @@ const Tabs = () => {
                 style={{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? COLORS.primary : COLORS.secondary,
+                  tintColor: focused ? COLORS.primary : COLORS.black,
                 }}
               />
               <Text
@@ -127,7 +127,7 @@ const Tabs = () => {
                 style={{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? COLORS.primary : COLORS.secondary,
+                  tintColor: focused ? COLORS.primary : COLORS.black,
                 }}
               />
               <Text
@@ -154,7 +154,7 @@ const Tabs = () => {
                 style={{
                   width: 30,
                   height: 30,
-                  tintColor: focused ? COLORS.primary : COLORS.secondary,
+                  tintColor: focused ? COLORS.primary : COLORS.black,
                 }}
               />
               <Text
