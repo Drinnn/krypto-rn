@@ -1,10 +1,14 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 import { StatusBar } from "expo-status-bar";
 import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import fonts from "./assets/fonts";
+
+import Tabs from "./navigation/tabs";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   let [fontsLoaded] = Font.useFonts({
@@ -14,19 +18,22 @@ export default function App() {
   if (!fontsLoaded) {
     return <AppLoading />;
   }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <>
       <StatusBar style="auto" />
-    </View>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+          initialRouteName={"Home"}
+        >
+          <Stack.Screen name="Home" component={Tabs} />
+          <Stack.Screen name="CryptoDetail" component={CryptoDetail} />
+          <Stack.Screen name="Transaction" component={Transaction} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
